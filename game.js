@@ -14,11 +14,16 @@ $(document).keydown(function(){
 });
 
 $(".btn").click(function(){
-  var color = $(this).attr("id");
-  givenAnswers.push(color);
-  makeAnnimation(color);
-  makesound(color);
-  checkAnswer(givenAnswers.length-1);
+  if(game){
+    var color = $(this).attr("id");
+    givenAnswers.push(color);
+    makeAnnimation(color);
+    makesound(color);
+    checkAnswer(givenAnswers.length-1);
+  }
+  else{
+    alert("Please Press Any Key to Start The Game First");
+  }
 });
 
 function checkAnswer(i){
